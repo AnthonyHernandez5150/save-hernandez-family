@@ -446,3 +446,54 @@ section:nth-child(even) {
 .legal-case-card:hover .false-claim-badge::before {
     left: 100%;
 }
+
+/* ===== CAMPAIGN PROGRESS BAR ===== */
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.campaign-progress {
+    position: relative;
+}
+
+.campaign-progress .progress-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.campaign-progress .raised {
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.campaign-progress .progress-fill {
+    box-shadow: 0 2px 8px rgba(168, 218, 220, 0.3);
+}
+
+/* Mobile responsiveness for campaign progress */
+@media (max-width: 768px) {
+    .campaign-progress .progress-stats {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .campaign-progress .raised {
+        font-size: 2rem !important;
+    }
+    
+    .campaign-progress .goal {
+        font-size: 1.2rem !important;
+    }
+    
+    .campaign-progress .progress-meta {
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+    }
+}

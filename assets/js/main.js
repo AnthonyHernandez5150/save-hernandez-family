@@ -20,6 +20,41 @@ function updateCountdown() {
     document.getElementById("mobile-countdown").textContent = `${days} days left`;
 }
 
+// ===== CAMPAIGN PROGRESS UPDATER =====
+async function updateCampaignProgress() {
+    try {
+        // Attempt to fetch real GoFundMe data
+        const response = await fetch('https://gateway.gofundme.com/web-gateway/v1/feed/5-dollars-to-stop-foreclosure');
+        const data = await response.json();
+        const campaign = data.references.campaigns[Object.keys(data.references.campaigns)[0]];
+        
+        // Extract real numbers from GoFundMe API
+        const raised = campaign.current_amount || 0;
+        const goal = campaign.goal_amount || 20000;
+        const donors = campaign.donor_count || 0;
+        const percent = goal > 0 ? Math.round((raised / goal) * 100) : 0;
+
+        // Update DOM with ACTUAL values
+        document.querySelector('.raised').textContent = `$${raised.toLocaleString()}`;
+        document.querySelector('.percent').textContent = `${percent}% funded`;
+        document.querySelector('.donors').textContent = `${donors} donation${donors !== 1 ? 's' : ''}`;
+        document.querySelector('.progress-fill').style.width = `${percent}%`;
+        document.querySelector('.updated').textContent = `Updated ${new Date().toLocaleTimeString()}`;
+
+        console.log(`Campaign Progress: $${raised} of $${goal} (${percent}%) from ${donors} donors`);
+
+    } catch (error) {
+        console.log("GoFundMe API unavailable, maintaining zero state:", error.message);
+        
+        // Fallback that maintains honest ZERO state
+        document.querySelector('.raised').textContent = "$0";
+        document.querySelector('.percent').textContent = "0% funded";
+        document.querySelector('.donors').textContent = "0 donations";
+        document.querySelector('.progress-fill').style.width = "0%";
+        document.querySelector('.updated').textContent = "Campaign just started";
+    }
+}
+
 // ===== SMOOTH SCROLLING =====
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -119,6 +154,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start countdown timer
     updateCountdown();
     setInterval(updateCountdown, 1000);
+    
+    // Initialize campaign progress
+    updateCampaignProgress();
+    // Update campaign progress every 5 minutes
+    setInterval(updateCampaignProgress, 5 * 60 * 1000);
     
     // Initialize smooth scrolling
     initSmoothScrolling();
