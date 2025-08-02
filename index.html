@@ -83,12 +83,16 @@
           decision, our family is facing homelessness, trauma, and forced exile.
         </p>
 
-        <div class="countdown" id="countdown">14 Days 06:23:11</div>
-
-        <a href="#donate" class="btn" onclick="trackDonationClick('hero')"
-          >Donate Now</a
-        >
-        <a href="#story" class="btn btn-secondary">Read Our Story</a>
+        <div class="hero-actions">
+          <div class="countdown" id="countdown">14 Days 06:23:11</div>
+          <a
+            href="#donate"
+            class="btn btn-primary"
+            onclick="trackDonationClick('hero')"
+            >Donate Now</a
+          >
+          <a href="#story" class="btn btn-secondary">Read Our Story</a>
+        </div>
       </div>
     </section>
 
@@ -128,13 +132,21 @@
             <div class="evidence-content">
               <h3>Our Reality Now</h3>
               <p>
-                We are stranded in a place where even brushing my teeth could mean hospital time.  
-                The water is contaminated—bottled water is a privilege, not a guarantee.  
-                Honduras had a <a href="https://insightcrime.org/news/insight-crime-2024-homicide-round-up/" target="_blank" style="color: var(--primary); text-decoration: underline;">homicide rate of ~34 per 100,000 in 2023—nearly six times the global average</a>.  
-                Cartel violence, kidnappings, and disappearances are everyday threats, especially in areas like San Pedro Sula.  
-                Local authorities are overwhelmed and under-resourceed, making safety and justice difficult to guarantee.  
-                Meanwhile, our family home in Colorado is slipping away because of a wrongful immigration decision.  
-                This isn't exile—it's survival.
+                We are stranded in a place where even brushing my teeth could
+                mean hospital time. The water is contaminated—bottled water is a
+                privilege, not a guarantee. Honduras had a
+                <a
+                  href="https://insightcrime.org/news/insight-crime-2024-homicide-round-up/"
+                  target="_blank"
+                  style="color: var(--primary); text-decoration: underline"
+                  >homicide rate of ~34 per 100,000 in 2023—nearly six times the
+                  global average</a
+                >. Cartel violence, kidnappings, and disappearances are everyday
+                threats, especially in areas like San Pedro Sula. Local
+                authorities are overwhelmed and under-resourceed, making safety
+                and justice difficult to guarantee. Meanwhile, our family home
+                in Colorado is slipping away because of a wrongful immigration
+                decision. This isn't exile—it's survival.
               </p>
             </div>
           </div>
@@ -160,31 +172,257 @@
               box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             "
           >
-            <div
-              style="
-                display: grid;
-                grid-template-columns: 1fr 2fr;
-                gap: 1rem;
-                margin-bottom: 2rem;
-              "
-            >
-              <div style="font-weight: 500">Law Cited</div>
-              <div style="font-weight: 500">The Truth</div>
-
-              <div>INA §212(a)(9)(A)(ii)</div>
-              <div>
-                No deportation order exists - only voluntary return after
-                domestic violence
+            <div class="legal-cases" style="margin-bottom: 2rem">
+              <!-- Case 1 -->
+              <div
+                class="legal-case-card"
+                style="
+                  margin-bottom: 1.5rem;
+                  border-radius: 8px;
+                  overflow: hidden;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
+                  cursor: pointer;
+                "
+              >
+                <div
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      var(--primary) 0%,
+                      #c92a2a 100%
+                    );
+                    color: white;
+                    padding: 0.75rem 1rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    position: relative;
+                  "
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    style="fill: currentColor"
+                  >
+                    <path
+                      d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"
+                    />
+                  </svg>
+                  <strong style="font-family: monospace; font-size: 0.9rem"
+                    >INA §212(a)(9)(A)(ii)</strong
+                  >
+                  <div
+                    class="false-claim-badge"
+                    style="
+                      margin-left: auto;
+                      background: #ff4757;
+                      color: white;
+                      padding: 0.25rem 0.6rem;
+                      border-radius: 20px;
+                      font-size: 0.75rem;
+                      font-weight: bold;
+                      text-transform: uppercase;
+                      letter-spacing: 0.5px;
+                      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                      animation: pulse-glow 2s infinite;
+                    "
+                  >
+                    ⚠️ FALSE CLAIM #1
+                  </div>
+                </div>
+                <div
+                  class="case-content"
+                  style="
+                    padding: 1.25rem;
+                    background: white;
+                    border-left: 4px solid var(--primary);
+                    transition: all 0.3s ease;
+                  "
+                >
+                  The embassy falsely claimed Ilsia had a prior deportation. In
+                  reality, there was no deportation order — only a
+                  <strong>voluntary return in 1998</strong> after she fled
+                  domestic violence. An
+                  <strong>approved I-212 waiver</strong> made this ground no
+                  longer valid.
+                </div>
               </div>
 
-              <div>INA §212(a)(9)(B)(i)(II)</div>
-              <div>Already waived with approved I-601A petition</div>
+              <!-- Case 2 -->
+              <div
+                class="legal-case-card"
+                style="
+                  margin-bottom: 1.5rem;
+                  border-radius: 8px;
+                  overflow: hidden;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
+                  cursor: pointer;
+                "
+              >
+                <div
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      var(--primary) 0%,
+                      #c92a2a 100%
+                    );
+                    color: white;
+                    padding: 0.75rem 1rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    position: relative;
+                  "
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    style="fill: currentColor"
+                  >
+                    <path
+                      d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"
+                    />
+                  </svg>
+                  <strong style="font-family: monospace; font-size: 0.9rem"
+                    >INA §212(a)(9)(B)(i)(II)</strong
+                  >
+                  <div
+                    class="false-claim-badge"
+                    style="
+                      margin-left: auto;
+                      background: #ff4757;
+                      color: white;
+                      padding: 0.25rem 0.6rem;
+                      border-radius: 20px;
+                      font-size: 0.75rem;
+                      font-weight: bold;
+                      text-transform: uppercase;
+                      letter-spacing: 0.5px;
+                      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                      animation: pulse-glow 2s infinite;
+                      animation-delay: 0.5s;
+                    "
+                  >
+                    ⚠️ FALSE CLAIM #2
+                  </div>
+                </div>
+                <div
+                  class="case-content"
+                  style="
+                    padding: 1.25rem;
+                    background: white;
+                    border-left: 4px solid var(--primary);
+                    transition: all 0.3s ease;
+                  "
+                >
+                  This "unlawful presence" bar was already resolved. Ilsia
+                  received an <strong>approved I-601A waiver</strong> in
+                  February 2024. Citing it again at the visa interview was
+                  unjustified and ignored her lawful steps.
+                </div>
+              </div>
 
-              <div>INA §212(a)(6)(C)(i)</div>
-              <div>Name variation was due to fleeing an abuser, not fraud</div>
+              <!-- Case 3 -->
+              <div
+                class="legal-case-card"
+                style="
+                  margin-bottom: 1.5rem;
+                  border-radius: 8px;
+                  overflow: hidden;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                  transition: all 0.3s ease;
+                  cursor: pointer;
+                "
+              >
+                <div
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      var(--primary) 0%,
+                      #c92a2a 100%
+                    );
+                    color: white;
+                    padding: 0.75rem 1rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    position: relative;
+                  "
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    style="fill: currentColor"
+                  >
+                    <path
+                      d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"
+                    />
+                  </svg>
+                  <strong style="font-family: monospace; font-size: 0.9rem"
+                    >INA §212(a)(6)(C)(i)</strong
+                  >
+                  <div
+                    class="false-claim-badge"
+                    style="
+                      margin-left: auto;
+                      background: #ff4757;
+                      color: white;
+                      padding: 0.25rem 0.6rem;
+                      border-radius: 20px;
+                      font-size: 0.75rem;
+                      font-weight: bold;
+                      text-transform: uppercase;
+                      letter-spacing: 0.5px;
+                      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                      animation: pulse-glow 2s infinite;
+                      animation-delay: 1s;
+                    "
+                  >
+                    ⚠️ FALSE CLAIM #3
+                  </div>
+                </div>
+                <div
+                  class="case-content"
+                  style="
+                    padding: 1.25rem;
+                    background: white;
+                    border-left: 4px solid var(--primary);
+                    transition: all 0.3s ease;
+                  "
+                >
+                  Ilsia used a different last name in 1998 while fleeing her
+                  abuser. At just 18 years old, terrified and vulnerable, she
+                  followed guidance from others to avoid being sent back to
+                  Nicaragua — where her life was in danger.
+                  <strong>No immigration benefit was gained</strong>, and
+                  <strong>case law confirms this is not fraud</strong>. But the
+                  embassy ignored this and misapplied the law.
+                </div>
+              </div>
             </div>
 
-            <a href="#evidence" class="btn">See The Evidence</a>
+            <div style="text-align: center; margin-bottom: 1rem">
+              <small style="color: #666; font-style: italic"
+                >Legal analysis confirmed by immigration attorneys</small
+              >
+            </div>
+
+            <a
+              href="#evidence"
+              class="btn"
+              style="
+                display: block;
+                text-align: center;
+                max-width: 200px;
+                margin: 0 auto;
+              "
+              >View Legal Documents</a
+            >
           </div>
         </div>
       </div>
