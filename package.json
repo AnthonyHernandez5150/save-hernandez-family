@@ -1,0 +1,34 @@
+{
+  "name": "save-hernandez-family",
+  "version": "1.0.0",
+  "description": "Emergency fundraising campaign website to help the Hernandez family prevent foreclosure",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --entry-file=index.html",
+    "build": "echo 'No build process needed for static HTML'",
+    "deploy": "echo 'Deploy to your hosting platform'",
+    "test": "echo 'Open index.html in multiple browsers to test'"
+  },
+  "keywords": [
+    "fundraising",
+    "campaign",
+    "family",
+    "immigration",
+    "foreclosure",
+    "donation",
+    "emergency"
+  ],
+  "author": "Save The Hernandez Family Campaign",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/save-hernandez-family.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/save-hernandez-family/issues"
+  },
+  "homepage": "https://yourusername.github.io/save-hernandez-family"
+}

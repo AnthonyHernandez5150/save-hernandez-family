@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Local Development Server",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"if (Get-Command live-server -ErrorAction SilentlyContinue) { live-server --port=3000 --entry-file=index.html --open=/index.html } else { Write-Host 'Installing live-server...'; npm install -g live-server; live-server --port=3000 --entry-file=index.html --open=/index.html }"
+			],
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
