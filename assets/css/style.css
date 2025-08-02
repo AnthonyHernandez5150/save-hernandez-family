@@ -145,21 +145,26 @@ section:nth-child(even) {
 
 /* ===== EVIDENCE GRID ===== */
 .evidence-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
     gap: 30px;
+    align-items: stretch;
 }
 
 .evidence-card {
+    flex: 1;
     background: white;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .evidence-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .evidence-img {
@@ -169,10 +174,14 @@ section:nth-child(even) {
     align-items: center;
     justify-content: center;
     color: #777;
+    flex-shrink: 0;
 }
 
 .evidence-content {
     padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ===== TIMELINE ===== */
@@ -388,6 +397,15 @@ section:nth-child(even) {
     
     .legal-cases > div > div:last-child {
         padding: 1rem !important;
+    }
+    
+    /* Evidence grid mobile fix */
+    .evidence-grid {
+        flex-direction: column;
+    }
+    
+    .evidence-card {
+        margin-bottom: 1.5rem;
     }
 }
 
