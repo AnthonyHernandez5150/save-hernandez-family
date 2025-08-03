@@ -18,6 +18,31 @@
     <!-- EXTERNAL STYLESHEET -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
+    <!-- RESPONSIVE TITLE FIXES -->
+    <style>
+      /* Ensure hero titles don't wrap on mobile devices */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.2rem !important;
+          line-height: 1.1 !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 1.8rem !important;
+          line-height: 1.1 !important;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .hero h1 {
+          font-size: 1.6rem !important;
+          line-height: 1.1 !important;
+        }
+      }
+    </style>
+
     <!-- FAVICON -->
     <link
       rel="icon"
@@ -85,7 +110,7 @@
         </p>
 
         <div class="hero-actions">
-          <div class="countdown" id="countdown">14 Days 06:23:11</div>
+          <div class="countdown" id="countdown">60 Days 00:00:00</div>
           <a
             href="#donate"
             class="btn btn-primary"
@@ -667,10 +692,7 @@
                 </svg>
                 2010
               </h3>
-              <p>
-                Began immigration process — filing petitions to bring Ilsia home
-                the right way
-              </p>
+              <p>Began immigration process — filing petitions</p>
             </div>
           </div>
 
@@ -712,7 +734,7 @@
                 </svg>
                 March 5, 2025
               </h3>
-              <p>Visa wrongfully denied in Managua despite approved waiver</p>
+              <p>Visa wrongfully denied despite approved waiver</p>
             </div>
           </div>
 
@@ -813,17 +835,19 @@
           <div class="evidence-card">
             <div class="evidence-img">
               <img
-                src="assets/images/domestic-violence-evidence-ilsia-hernandez-fort-morgan-colorado-1998.png.png"
-                alt="Official hospital emergency room records from Fort Morgan, Colorado documenting domestic violence injuries sustained by Ilsia Hernandez in 1998. Medical staff confirmed assault patterns. The Embassy later called this documented abuse 'immigration fraud.'"
-                title="1998 Domestic Violence Hospital Records – Fort Morgan, Colorado – Embassy Called This 'Fraud'"
+                src="assets/images/hernandez-family-together-before-exile-colorado-home.jpg"
+                alt="Hernandez family together at home in Colorado before forced separation and visa denial - real American family threatened by broken immigration system"
+                title="Hernandez Family Together in Colorado Before Forced Exile - Family Unity Before Immigration Separation"
                 style="
                   width: 100%;
                   height: 200px;
                   object-fit: cover;
-                  object-position: top;
+                  object-position: center;
                   border-radius: 4px;
                   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                  cursor: pointer;
                 "
+                onclick="window.open(this.src, '_blank')"
               />
             </div>
             <div class="evidence-content">
@@ -1089,7 +1113,7 @@
               "
             >
               <span class="updated">Campaign just started</span>
-              <span>Goal: Stop foreclosure</span>
+              <span>Goal: Help the Hernandez family</span>
             </div>
           </div>
 
@@ -1115,17 +1139,87 @@
             </div>
           </div>
 
-          <a
-            href="https://gofund.me/5-dollars-to-stop-foreclosure"
-            class="btn"
-            onclick="trackDonationClick('main')"
-            style="
-              background-color: var(--primary);
-              font-size: 1.2rem;
-              padding: 15px 40px;
-            "
-            >Donate via GoFundMe</a
-          >
+          <!-- Donation Options -->
+          <div style="margin-bottom: 2rem">
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem; opacity: 0.9">
+              Choose your preferred way to help:
+            </p>
+
+            <!-- Main Donation Buttons -->
+            <div
+              style="
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-bottom: 2rem;
+              "
+            >
+              <a
+                href="https://www.gofundme.com/f/5-dollars-to-stop-foreclosure"
+                class="btn"
+                onclick="trackDonationClick('main-gofundme')"
+                style="
+                  background-color: var(--primary);
+                  font-size: 1.2rem;
+                  padding: 15px 30px;
+                  flex: 1;
+                  min-width: 200px;
+                  max-width: 250px;
+                "
+                >Donate via GoFundMe</a
+              >
+              <a
+                href="https://paypal.me/anthonyhernandez732"
+                class="btn"
+                onclick="trackDonationClick('main-paypal')"
+                style="
+                  background-color: #0070ba;
+                  font-size: 1.2rem;
+                  padding: 15px 30px;
+                  flex: 1;
+                  min-width: 200px;
+                  max-width: 250px;
+                "
+                >Donate via PayPal</a
+              >
+            </div>
+
+            <!-- QR Code Option -->
+            <div style="text-align: center; margin-bottom: 1rem">
+              <p
+                style="margin-bottom: 0.75rem; font-size: 0.95rem; opacity: 0.8"
+              >
+                or scan to donate instantly:
+              </p>
+              <a
+                href="https://paypal.me/anthonyhernandez732"
+                target="_blank"
+                onclick="trackDonationClick('main-qr')"
+                style="display: inline-block; text-decoration: none"
+              >
+                <img
+                  src="assets/images/paypal-donation-qr-code-hernandez-family.png"
+                  alt="PayPal Donation QR Code - Scan to donate to Hernandez Family"
+                  style="
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                    transition: transform 0.2s ease;
+                    cursor: pointer;
+                  "
+                  onmouseover="this.style.transform='scale(1.05)'"
+                  onmouseout="this.style.transform='scale(1)'"
+                />
+              </a>
+              <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7">
+                Mobile users: Point camera at QR code
+              </p>
+            </div>
+          </div>
+
           <p style="margin-top: 1rem">or share this page with 3 friends</p>
 
           <!-- Social Sharing Buttons -->
@@ -1133,23 +1227,23 @@
             <button
               onclick="shareOnSocialMedia('facebook')"
               class="btn"
-              style="background-color: #4267b2"
+              style="background-color: #4267b2; margin-right: 10px"
             >
               Share on Facebook
             </button>
             <button
               onclick="shareOnSocialMedia('twitter')"
               class="btn"
-              style="background-color: #1da1f2"
+              style="background-color: #000000; margin-right: 10px"
             >
-              Share on Twitter
+              Share on X
             </button>
             <button
-              onclick="shareOnSocialMedia('linkedin')"
+              onclick="shareOnInstagram()"
               class="btn"
-              style="background-color: #0077b5"
+              style="background-color: #e4405f; margin-right: 10px"
             >
-              Share on LinkedIn
+              Copy for Instagram
             </button>
           </div>
         </div>
@@ -1158,8 +1252,48 @@
 
     <!-- ===== STICKY DONATION BAR ===== -->
     <div class="donation-bar">
-      <div class="donation-text">
-        <span id="mobile-countdown">14 days left</span> to save our home
+      <div class="donation-left">
+        <div
+          class="language-switcher"
+          onclick="
+            const indicator = document.getElementById('current-lang');
+            if (indicator) {
+              const current = indicator.textContent;
+              const newLang = current === 'EN' ? 'es' : 'en';
+              const newText = newLang === 'es' ? 'ES' : 'EN';
+              indicator.textContent = newText;
+              localStorage.setItem('language', newLang);
+              updatePageContent(newLang);
+            }
+          "
+          title="Switch language / Cambiar idioma"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+          "
+          onmouseover="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='scale(1.05)'"
+          onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='scale(1)'"
+        >
+          <span id="current-lang">EN</span>
+          <span style="font-size: 0.7rem; opacity: 0.7">|</span>
+          <span style="font-size: 0.7rem; opacity: 0.7">ES</span>
+        </div>
+      </div>
+      <div class="donation-center">
+        <div class="donation-text">
+          <span id="mobile-countdown">59 days left</span> Please help save the
+          Hernandez family
+        </div>
       </div>
       <a
         href="https://gofund.me/5-dollars-to-stop-foreclosure"
@@ -1172,6 +1306,715 @@
 
     <!-- EXTERNAL JAVASCRIPT -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Instagram Copy Function -->
+    <script>
+      function shareOnInstagram() {
+        const instagramCaption = `💔 This is what a broken immigration system looks like.
+
+9 children. Their mother kept out of the country she called home for 27 years. One daughter serves in the U.S. Navy — but her mom can't come to her graduation.
+
+We followed every rule. Did everything legally. 15 years of waiting. And they still said no.
+
+Now we're losing our home. Our family. Everything.
+
+The system isn't broken by accident. It's designed to break families like ours.
+
+Help us fight back: https://gofund.me/5-dollars-to-stop-foreclosure
+
+#SaveHernandezFamily #ImmigrationJustice #FamilySeparation #ColoradoFamily #GoFundMe #Help #JusticeForFamilies`;
+
+        // Copy to clipboard
+        navigator.clipboard.writeText(instagramCaption).then(
+          function () {
+            alert(
+              "Instagram caption copied! You can now paste it into your Instagram story or post."
+            );
+          },
+          function (err) {
+            // Fallback for older browsers
+            const textArea = document.createElement("textarea");
+            textArea.value = instagramCaption;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            alert(
+              "Instagram caption copied! You can now paste it into your Instagram story or post."
+            );
+          }
+        );
+      }
+
+      // ===== LANGUAGE SWITCHER =====
+      const translations = {
+        en: {
+          title: "Save The Hernandez Family",
+          heroText:
+            "An American Family Is Losing Everything Because the Government Won't Let a Wife Come Home. Ilsia has lived in the U.S. for 27 years — nearly 20 of those years with me. She raised our NINE children, built a home, and held our family together through everything. One of our daughters now serves in the U.S. Navy. And yet, her mother — the woman who raised her, who gave everything to this country — is being kept out. Because of a wrongful immigration decision, our family is facing homelessness, trauma, and forced exile.",
+          donateBtn: "Donate Now",
+          readStoryBtn: "Read Our Story",
+          stickyText: "Please help save the Hernandez family",
+
+          // Section titles
+          ourStoryTitle: "Our Family's Nightmare",
+          legalTitle: "The Legal Injustice",
+          timelineTitle: "15 Years of Fighting the System's Lies",
+          evidenceTitle: "Irrefutable Evidence",
+          donateTitle: "How You Can Help",
+
+          // Donation section
+          donateSubtitle: "Every $5 gives us another hour to fight",
+          chooseWay: "Choose your preferred way to help:",
+          scanText: "or scan to donate instantly:",
+          mobileText: "Mobile users: Point camera at QR code",
+          shareText: "or share this page with 3 friends",
+
+          // Story cards
+          builtFromNothing: "Built From Nothing",
+          wrongfulDecision: "The Wrongful Decision",
+          ourRealityNow: "Our Reality Now",
+
+          // Legal section
+          legalSubtitle: "Three False Claims That Changed Everything",
+          helpFightBtn: "Help Us Fight This Injustice",
+
+          // Timeline
+          timelineCaption:
+            "A Timeline of Broken Promises and Bureaucratic Cruelty",
+          timelinePromise: "The Promise:",
+          timelineReality: "The Reality:",
+          timelinePromiseText:
+            '"Come out of the shadows. Complete the process legally."',
+          timelineRealityText:
+            "15 years of delays, false claims, and a system designed to break families.",
+          timelineBottom:
+            "We became grandparents waiting for justice. They're still putting us through hell.",
+
+          // Evidence section
+          actOfSurvival: "An Act of Survival, Not Deception",
+          mentalHealth: "Mental Health Impact — Ignored by USCIS",
+          collapseFamily: "The Collapse of a Family's Heart",
+          viewTherapist: "View Therapist's Official Letter (PDF)",
+
+          // Social buttons
+          shareOnFacebook: "Share on Facebook",
+          shareOnX: "Share on X",
+          copyForInstagram: "Copy for Instagram",
+
+          // PayPal buttons
+          donateViaGoFundMe: "Donate via GoFundMe",
+          donateViaPayPal: "Donate via PayPal",
+
+          // Story content paragraphs
+          storyP1:
+            'I grew up in foster care in Greeley, Colorado. No safety net. No "Mom and Dad." I started working at 13—real work. Back-breaking work. The kind that leaves scars before you even know what health insurance is.',
+          storyP2:
+            'Ilsia came from a country the world calls "third-world," but together we built something no one expected—a family. For nearly 20 years, they said we wouldn\'t make it.',
+          storyP3:
+            "Now our son holds degrees in Criminal Justice and Computer Science. I'm a proud grandfather of two, with another on the way. My daughter is charging toward being a neuroscientist. Another serves in the U.S. Navy. The rest? Gifted, talented, smarter than most adults wish they were.",
+          storyP4:
+            "Every single one of my kids is what this country should be proud of. And yet, the system is trying to tear it all down.",
+
+          wrongfulP1:
+            "Ilsia followed every step of the legal immigration process — and was still denied. Not for what she did, but for surviving.",
+          wrongfulP2:
+            "She had an approved I-601A waiver — officially recognized by USCIS. She provided hospital records and court documents proving she was a victim of domestic violence.",
+          wrongfulP3:
+            'But the Embassy called survival "fraud." They dismissed the facts. They ignored the law. They punished a woman for fleeing her abuser at 18 years old.',
+          wrongfulP4:
+            "This isn't an immigration case — it's a miscarriage of justice. They're destroying an American family because they can.",
+
+          realityP1:
+            "We are stranded in a place where even brushing my teeth could mean hospital time. The water is contaminated—bottled water is a privilege, not a guarantee. The tap runs with contamination, and bottled water depends on luck and money we don't have.",
+          realityP2:
+            "Meanwhile, our family home in Colorado is slipping away because of a wrongful immigration decision. This isn't exile—it's survival.",
+          realityP3:
+            'We are not "immigrants"—we are Americans, trapped outside our own home.',
+          realityP4:
+            "Every day in Central America feels like a countdown—not just to losing our house, but to losing each other. And while we fight to survive here, the bank back in Colorado is preparing to erase everything we built—because of a broken immigration system that refused to see us as human.",
+
+          // Evidence section content
+          evidenceP1:
+            "In 1998, Ilsia was a young woman facing extreme poverty and danger in Central America. With no safe options, she made a desperate choice — using a different last name to avoid being sent back to a place where her safety wasn't guaranteed.",
+          evidenceP2:
+            "This wasn't fraud.<br />It wasn't deception.<br />It was a human instinct to survive.",
+          evidenceP3:
+            "Decades later, the U.S. Embassy labeled her a liar, ignoring the fact that no immigration benefit was gained, no system was cheated, and no crime was committed.",
+          evidenceP4: "They punished her for surviving.",
+
+          mentalHealthP1:
+            '22 documented therapy sessions.<br />Diagnosed Major Depressive Disorder & Generalized Anxiety Disorder.<br />Explicit notes of PTSD symptoms and suicidal ideation.<br />Despite this, USCIS denied expedite requests, claiming it wasn\'t "urgent enough."',
+          mentalHealthP2:
+            "Want more proof? I have updated therapy records ready if they're willing to ask for them.",
+
+          familyCollapseP1:
+            "Ilsia was the glue that held our family together. Her sudden forced separation has left our nine children struggling emotionally and mentally. Teachers have noticed their frustration and sadness — quiet stares, emotional outbursts, and a visible loss of direction.<br /><br />Studies show that parental separation, especially from a primary caregiver, leads to long-term trauma, anxiety, and academic decline. This isn't an abstract theory — it's happening to our family right now.",
+          familyCollapseP2:
+            "This is how families get destroyed. Every day of separation causes more damage that may never heal.",
+
+          // Timeline content
+          timelineEvents: {
+            event1: "Began immigration process — filing petitions",
+            event2:
+              "I-601A provisional waiver approved after 14 years of waiting",
+            event3: "Visa wrongfully denied despite approved waiver",
+            event4: "Filed LegalNet challenge to fight the wrongful denial",
+            event5:
+              "Submitted I-601 hardship waiver showing family devastation",
+            event6:
+              "Congressional inquiry opened by representatives fighting for our family",
+            event7:
+              "Still waiting for justice while foreclosure deadline approaches",
+          },
+
+          // Legal case content
+          legalCase1:
+            "The embassy falsely claimed Ilsia had a prior deportation. In reality, there was no deportation order — only a voluntary return in 1998 after she fled domestic violence. An approved I-212 waiver made this ground no longer valid.",
+          legalCase2:
+            'This "unlawful presence" bar was already resolved. Ilsia received an approved I-601A waiver in February 2024. Citing it again at the visa interview was unjustified and ignored her lawful steps.',
+          legalCase3:
+            "In 1998, Ilsia was a young woman facing extreme poverty and danger in Central America. At just 18 years old, terrified and vulnerable, she made a desperate choice — using a different last name to avoid being sent back to a place where her safety wasn't guaranteed. She followed guidance from others to survive. No immigration benefit was gained, and case law confirms this is not fraud. But the embassy ignored this and misapplied the law, punishing her for surviving.",
+          legalAnalysis: "Legal analysis confirmed by immigration attorneys",
+        },
+        es: {
+          title: "Salva a la Familia Hernández",
+          heroText:
+            "Una Familia Estadounidense Está Perdiendo Todo Porque el Gobierno No Deja que una Esposa Regrese a Casa. Ilsia ha vivido en EE.UU. por 27 años — casi 20 de esos años conmigo. Crió a nuestros NUEVE hijos, construyó un hogar, y mantuvo unida a nuestra familia a través de todo. Una de nuestras hijas ahora sirve en la Marina de EE.UU. Y sin embargo, su madre — la mujer que la crió, que dio todo por este país — está siendo excluida. Debido a una decisión migratoria injusta, nuestra familia enfrenta la falta de hogar, trauma, y exilio forzado.",
+          donateBtn: "Donar Ahora",
+          readStoryBtn: "Lee Nuestra Historia",
+          stickyText: "Por favor ayuda a salvar a la familia Hernández",
+
+          // Section titles
+          ourStoryTitle: "La Pesadilla de Nuestra Familia",
+          legalTitle: "La Injusticia Legal",
+          timelineTitle: "15 Años Luchando Contra las Mentiras del Sistema",
+          evidenceTitle: "Evidencia Irrefutable",
+          donateTitle: "Cómo Puedes Ayudar",
+
+          // Donation section
+          donateSubtitle: "Cada $5 nos da otra hora para luchar",
+          chooseWay: "Elige tu forma preferida de ayudar:",
+          scanText: "o escanea para donar al instante:",
+          mobileText: "Usuarios móviles: Apunta la cámara al código QR",
+          shareText: "o comparte esta página con 3 amigos",
+
+          // Story cards
+          builtFromNothing: "Construido de la Nada",
+          wrongfulDecision: "La Decisión Injusta",
+          ourRealityNow: "Nuestra Realidad Ahora",
+
+          // Legal section
+          legalSubtitle: "Tres Afirmaciones Falsas Que Cambiaron Todo",
+          helpFightBtn: "Ayúdanos a Luchar Contra Esta Injusticia",
+
+          // Timeline
+          timelineCaption:
+            "Una Cronología de Promesas Rotas y Crueldad Burocrática",
+          timelinePromise: "La Promesa:",
+          timelineReality: "La Realidad:",
+          timelinePromiseText:
+            '"Sal de las sombras. Completa el proceso legalmente."',
+          timelineRealityText:
+            "15 años de retrasos, afirmaciones falsas, y un sistema diseñado para destruir familias.",
+          timelineBottom:
+            "Nos convertimos en abuelos esperando justicia. Todavía nos están haciendo pasar por el infierno.",
+
+          // Evidence section
+          actOfSurvival: "Un Acto de Supervivencia, No de Engaño",
+          mentalHealth: "Impacto en la Salud Mental — Ignorado por USCIS",
+          collapseFamily: "El Colapso del Corazón de una Familia",
+          viewTherapist: "Ver Carta Oficial del Terapeuta (PDF)",
+
+          // Social buttons
+          shareOnFacebook: "Compartir en Facebook",
+          shareOnX: "Compartir en X",
+          copyForInstagram: "Copiar para Instagram",
+
+          // PayPal buttons
+          donateViaGoFundMe: "Donar vía GoFundMe",
+          donateViaPayPal: "Donar vía PayPal",
+
+          // Story content paragraphs
+          storyP1:
+            'Crecí en hogares de crianza en Greeley, Colorado. Sin red de seguridad. Sin "mamá y papá". Comencé a trabajar a los 13—trabajo real. Trabajo que rompe la espalda. El tipo que deja cicatrices antes de que sepas qué es el seguro de salud.',
+          storyP2:
+            'Ilsia vino de un país que el mundo llama "tercer mundo", pero juntos construimos algo que nadie esperaba—una familia. Durante casi 20 años, dijeron que no lo lograríamos.',
+          storyP3:
+            "Ahora nuestro hijo tiene títulos en Justicia Criminal y Ciencias de la Computación. Soy un abuelo orgulloso de dos, con otro en camino. Mi hija se dirige hacia ser neurocientífica. Otra sirve en la Marina de EE.UU. ¿El resto? Dotados, talentosos, más inteligentes de lo que la mayoría de adultos desearían ser.",
+          storyP4:
+            "Cada uno de mis hijos es de lo que este país debería estar orgulloso. Y sin embargo, el sistema está tratando de derribarlo todo.",
+
+          wrongfulP1:
+            "Ilsia siguió cada paso del proceso legal de inmigración — y aún así fue negada. No por lo que hizo, sino por sobrevivir.",
+          wrongfulP2:
+            "Tenía una exención I-601A aprobada — oficialmente reconocida por USCIS. Proporcionó registros hospitalarios y documentos judiciales que probaban que era víctima de violencia doméstica.",
+          wrongfulP3:
+            'Pero la Embajada llamó a la supervivencia "fraude". Desestimaron los hechos. Ignoraron la ley. Castigaron a una mujer por huir de su abusador a los 18 años.',
+          wrongfulP4:
+            "Este no es un caso de inmigración — es una denegación de justicia. Están destruyendo una familia estadounidense porque pueden.",
+
+          realityP1:
+            "Estamos varados en un lugar donde incluso cepillarme los dientes podría significar tiempo en el hospital. El agua está contaminada—el agua embotellada es un privilegio, no una garantía. El grifo corre con contaminación, y el agua embotellada depende de la suerte y el dinero que no tenemos.",
+          realityP2:
+            "Mientras tanto, nuestro hogar familiar en Colorado se está escapando debido a una decisión migratoria injusta. Esto no es exilio—es supervivencia.",
+          realityP3:
+            'No somos "inmigrantes"—somos estadounidenses, atrapados fuera de nuestro propio hogar.',
+          realityP4:
+            "Cada día en América Central se siente como una cuenta regresiva—no solo para perder nuestra casa, sino para perdernos unos a otros. Y mientras luchamos por sobrevivir aquí, el banco en Colorado se está preparando para borrar todo lo que construimos—debido a un sistema de inmigración roto que se negó a vernos como humanos.",
+
+          // Evidence section content
+          evidenceP1:
+            "En 1998, Ilsia era una mujer joven enfrentando pobreza extrema y peligro en América Central. Sin opciones seguras, tomó una decisión desesperada — usar un apellido diferente para evitar ser enviada de vuelta a un lugar donde su seguridad no estaba garantizada.",
+          evidenceP2:
+            "Esto no fue fraude.<br />No fue engaño.<br />Fue un instinto humano de supervivencia.",
+          evidenceP3:
+            "Décadas después, la Embajada de EE.UU. la etiquetó como mentirosa, ignorando el hecho de que no se obtuvo ningún beneficio migratorio, no se engañó a ningún sistema, y no se cometió ningún crimen.",
+          evidenceP4: "La castigaron por sobrevivir.",
+
+          mentalHealthP1:
+            '22 sesiones de terapia documentadas.<br />Diagnosticado con Trastorno Depresivo Mayor y Trastorno de Ansiedad Generalizada.<br />Notas explícitas de síntomas de PTSD e ideación suicida.<br />A pesar de esto, USCIS negó las solicitudes de urgencia, alegando que no era "lo suficientemente urgente".',
+          mentalHealthP2:
+            "¿Quieres más pruebas? Tengo registros de terapia actualizados listos si están dispuestos a pedirlos.",
+
+          familyCollapseP1:
+            "Ilsia era el pegamento que mantenía unida a nuestra familia. Su separación forzada repentina ha dejado a nuestros nueve hijos luchando emocional y mentalmente. Los maestros han notado su frustración y tristeza — miradas silenciosas, arrebatos emocionales, y una pérdida visible de dirección.<br /><br />Los estudios muestran que la separación parental, especialmente de un cuidador primario, lleva a trauma a largo plazo, ansiedad, y declive académico. Esta no es una teoría abstracta — está pasando a nuestra familia ahora mismo.",
+          familyCollapseP2:
+            "Así es como las familias se destruyen. Cada día de separación causa más daño que puede que nunca sane.",
+
+          // Timeline content
+          timelineEvents: {
+            event1:
+              "Comenzamos el proceso de inmigración — presentando peticiones",
+            event2:
+              "Exención provisional I-601A aprobada después de 14 años de espera",
+            event3: "Visa injustamente negada a pesar de la exención aprobada",
+            event4:
+              "Presentamos desafío LegalNet para luchar contra la negación injusta",
+            event5:
+              "Sometimos exención de dificultad I-601 mostrando devastación familiar",
+            event6:
+              "Investigación del Congreso abierta por representantes luchando por nuestra familia",
+            event7:
+              "Aún esperando justicia mientras se acerca la fecha límite de ejecución hipotecaria",
+          },
+
+          // Legal case content
+          legalCase1:
+            "La embajada afirmó falsamente que Ilsia tenía una deportación previa. En realidad, no había orden de deportación — solo un retorno voluntario en 1998 después de que huyó de violencia doméstica. Una exención I-212 aprobada hizo que este fundamento ya no fuera válido.",
+          legalCase2:
+            'Esta barra de "presencia ilegal" ya estaba resuelta. Ilsia recibió una exención I-601A aprobada en febrero de 2024. Citarla nuevamente en la entrevista de visa fue injustificado e ignoró sus pasos legales.',
+          legalCase3:
+            "En 1998, Ilsia era una mujer joven enfrentando pobreza extrema y peligro en América Central. A solo 18 años, aterrorizada y vulnerable, tomó una decisión desesperada — usar un apellido diferente para evitar ser enviada de vuelta a un lugar donde su seguridad no estaba garantizada. Siguió la orientación de otros para sobrevivir. No se obtuvo ningún beneficio migratorio, y la jurisprudencia confirma que esto no es fraude. Pero la embajada ignoró esto y aplicó mal la ley, castigándola por sobrevivir.",
+          legalAnalysis:
+            "Análisis legal confirmado por abogados de inmigración",
+        },
+      };
+
+      // Simple content update function
+      function updatePageContent(lang) {
+        const t = translations[lang];
+        
+        if (!t) {
+          return;
+        }
+
+        try {
+          // Update main title
+          const title = document.querySelector("h1");
+          if (title) title.textContent = t.title;
+
+          // Update hero text
+          const heroText = document.querySelector(".hero p");
+          if (heroText) heroText.innerHTML = t.heroText;
+
+          // Update buttons
+          const donateBtn = document.querySelector(".btn-primary");
+          if (donateBtn) donateBtn.textContent = t.donateBtn;
+          
+          const readStoryBtn = document.querySelector(".btn-secondary");
+          if (readStoryBtn) readStoryBtn.textContent = t.readStoryBtn;
+
+          // Update sticky bar text
+          const stickyText = document.querySelector(".donation-text");
+          if (stickyText) {
+            const countdownSpan = stickyText.querySelector("#mobile-countdown");
+            const countdownText = countdownSpan ? countdownSpan.outerHTML + " " : "";
+            stickyText.innerHTML = countdownText + t.stickyText;
+          }
+
+          // Update section titles
+          const sectionTitles = document.querySelectorAll(".section-title");
+          if (sectionTitles[0]) sectionTitles[0].textContent = t.ourStoryTitle;
+          if (sectionTitles[1]) sectionTitles[1].textContent = t.legalTitle;
+          if (sectionTitles[2]) sectionTitles[2].textContent = t.timelineTitle;
+          if (sectionTitles[3]) sectionTitles[3].textContent = t.evidenceTitle;
+          if (sectionTitles[4]) sectionTitles[4].textContent = t.donateTitle;
+
+          // Update story card titles - more specific selectors
+          const storyCards = document.querySelectorAll("#story .evidence-card");
+          if (storyCards[0]) {
+            const title = storyCards[0].querySelector("h3");
+            if (title) title.textContent = t.builtFromNothing;
+            const paragraphs = storyCards[0].querySelectorAll("p");
+            if (paragraphs[0]) paragraphs[0].textContent = t.storyP1;
+            if (paragraphs[1]) paragraphs[1].textContent = t.storyP2;
+            if (paragraphs[2]) paragraphs[2].innerHTML = t.storyP3;
+            if (paragraphs[3]) paragraphs[3].textContent = t.storyP4;
+          }
+          if (storyCards[1]) {
+            const title = storyCards[1].querySelector("h3");
+            if (title) title.textContent = t.wrongfulDecision;
+            const paragraphs = storyCards[1].querySelectorAll("p");
+            if (paragraphs[0]) paragraphs[0].textContent = t.wrongfulP1;
+            if (paragraphs[1]) paragraphs[1].innerHTML = t.wrongfulP2;
+            if (paragraphs[2]) paragraphs[2].innerHTML = t.wrongfulP3;
+            if (paragraphs[3]) paragraphs[3].textContent = t.wrongfulP4;
+          }
+          if (storyCards[2]) {
+            const title = storyCards[2].querySelector("h3");
+            if (title) title.textContent = t.ourRealityNow;
+            const paragraphs = storyCards[2].querySelectorAll("p");
+            if (paragraphs[0]) paragraphs[0].innerHTML = t.realityP1;
+            if (paragraphs[1]) paragraphs[1].textContent = t.realityP2;
+            if (paragraphs[2]) paragraphs[2].textContent = t.realityP3;
+            if (paragraphs[3]) paragraphs[3].textContent = t.realityP4;
+          }
+
+          // Update legal section
+          const legalSubtitle = document.querySelector("#legal h3");
+          if (legalSubtitle) legalSubtitle.textContent = t.legalSubtitle;
+
+          // Update legal case content
+          const legalCases = document.querySelectorAll(".case-content");
+          if (legalCases[0]) legalCases[0].textContent = t.legalCase1;
+          if (legalCases[1]) legalCases[1].textContent = t.legalCase2;
+          if (legalCases[2]) legalCases[2].textContent = t.legalCase3;
+
+          // Update legal analysis
+          const legalAnalysis = document.querySelector("#legal small");
+          if (legalAnalysis) legalAnalysis.textContent = t.legalAnalysis;
+
+          // Update legal button
+          const legalBtn = document.querySelector("#legal .btn");
+          if (legalBtn) legalBtn.textContent = t.helpFightBtn;
+
+          // Update timeline content - more specific
+          const timelineCaption = document.querySelector(".timeline-caption");
+          if (timelineCaption) {
+            timelineCaption.innerHTML = `<small style="display: block; font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">${t.timelinePromise}</small>${t.timelineCaption}`;
+          }
+
+          // Update timeline promise/reality box - be more specific
+          const timelineBox = document.querySelector("#timeline div[style*='background: rgba(230, 57, 70, 0.05)']");
+          if (timelineBox) {
+            const promiseDiv = timelineBox.querySelector("div:first-child div:first-child");
+            const realityDiv = timelineBox.querySelector("div:first-child div:last-child");
+            const bottomP = timelineBox.querySelector("div:last-child p");
+            
+            if (promiseDiv) {
+              promiseDiv.innerHTML = `<strong style="color: var(--primary); font-size: 1.2rem; display: block; margin-bottom: 0.75rem;">${t.timelinePromise}</strong><p style="margin: 0; font-style: italic; color: #555; font-size: 1.05rem; line-height: 1.4;">${t.timelinePromiseText}</p>`;
+            }
+            if (realityDiv) {
+              realityDiv.innerHTML = `<strong style="color: var(--secondary); font-size: 1.2rem; display: block; margin-bottom: 0.75rem;">${t.timelineReality}</strong><p style="margin: 0; font-weight: 500; color: #333; font-size: 1.05rem; line-height: 1.4;">${t.timelineRealityText}</p>`;
+            }
+            if (bottomP) {
+              bottomP.textContent = t.timelineBottom;
+            }
+          }
+
+          // Update timeline events
+          const timelineEvents = document.querySelectorAll(".timeline-item p");
+          if (t.timelineEvents) {
+            if (timelineEvents[0]) timelineEvents[0].textContent = t.timelineEvents.event1;
+            if (timelineEvents[1]) timelineEvents[1].textContent = t.timelineEvents.event2;
+            if (timelineEvents[2]) timelineEvents[2].textContent = t.timelineEvents.event3;
+            if (timelineEvents[3]) timelineEvents[3].textContent = t.timelineEvents.event4;
+            if (timelineEvents[4]) timelineEvents[4].textContent = t.timelineEvents.event5;
+            if (timelineEvents[5]) timelineEvents[5].textContent = t.timelineEvents.event6;
+            if (timelineEvents[6]) timelineEvents[6].textContent = t.timelineEvents.event7;
+          }
+
+          // Update evidence section - be more specific
+          const evidenceCards = document.querySelectorAll("#evidence .evidence-card");
+          if (evidenceCards[0]) {
+            const title = evidenceCards[0].querySelector("h3");
+            if (title) title.textContent = t.actOfSurvival;
+            const paragraphs = evidenceCards[0].querySelectorAll("p");
+            if (paragraphs[0]) paragraphs[0].textContent = t.evidenceP1;
+            if (paragraphs[1]) paragraphs[1].innerHTML = t.evidenceP2;
+            if (paragraphs[2]) paragraphs[2].textContent = t.evidenceP3;
+            if (paragraphs[3]) paragraphs[3].textContent = t.evidenceP4;
+          }
+          if (evidenceCards[1]) {
+            const title = evidenceCards[1].querySelector("h3");
+            if (title) title.textContent = t.mentalHealth;
+            const paragraphs = evidenceCards[1].querySelectorAll("p");
+            if (paragraphs[0]) paragraphs[0].innerHTML = t.mentalHealthP1;
+            if (paragraphs[1]) paragraphs[1].textContent = t.mentalHealthP2;
+            const btn = evidenceCards[1].querySelector(".btn");
+            if (btn) btn.textContent = t.viewTherapist;
+          }
+          if (evidenceCards[2]) {
+            const title = evidenceCards[2].querySelector("h3");
+            if (title) title.textContent = t.collapseFamily;
+            const paragraphs = evidenceCards[2].querySelectorAll("p");
+            if (paragraphs[0]) paragraphs[0].innerHTML = t.familyCollapseP1;
+            if (paragraphs[1]) paragraphs[1].textContent = t.familyCollapseP2;
+          }
+
+          // Update donation section
+          const donateSubtitle = document.querySelector("#donate h3");
+          if (donateSubtitle) donateSubtitle.textContent = t.donateSubtitle;
+
+          // Update specific donation text elements
+          const chooseWayP = document.querySelector("#donate p[style*='margin-bottom: 1.5rem']");
+          if (chooseWayP) chooseWayP.textContent = t.chooseWay;
+
+          const scanTextP = document.querySelector("#donate p[style*='margin-bottom: 0.75rem']");
+          if (scanTextP) scanTextP.textContent = t.scanText;
+
+          const mobileTextP = document.querySelector("#donate p[style*='margin-top: 0.5rem']");
+          if (mobileTextP) mobileTextP.textContent = t.mobileText;
+
+          const shareTextP = document.querySelector("#donate p[style*='margin-top: 1rem']");
+          if (shareTextP) shareTextP.textContent = t.shareText;
+
+          // Update donation buttons
+          const donateButtons = document.querySelectorAll("#donate .btn");
+          if (donateButtons[0]) donateButtons[0].textContent = t.donateViaGoFundMe;
+          if (donateButtons[1]) donateButtons[1].textContent = t.donateViaPayPal;
+
+          // Update social buttons
+          const socialButtons = document.querySelectorAll("#donate button");
+          if (socialButtons[0]) socialButtons[0].textContent = t.shareOnFacebook;
+          if (socialButtons[1]) socialButtons[1].textContent = t.shareOnX;
+          if (socialButtons[2]) socialButtons[2].textContent = t.copyForInstagram;
+
+          console.log('Content updated successfully to', lang);
+        } catch (error) {
+          // Silent error handling for production
+        }
+      }
+
+      function switchLanguage(lang) {
+        // Update button styles
+        document.getElementById("lang-en").style.background =
+          lang === "en" ? "var(--primary)" : "transparent";
+        document.getElementById("lang-en").style.color =
+          lang === "en" ? "white" : "var(--primary)";
+        document.getElementById("lang-es").style.background =
+          lang === "es" ? "var(--primary)" : "transparent";
+        document.getElementById("lang-es").style.color =
+          lang === "es" ? "white" : "var(--primary)";
+
+        // Update content
+        const t = translations[lang];
+
+        // Update main title
+        document.querySelector("h1").textContent = t.title;
+        document.title = t.title + " | Stop the Foreclosure & Bring Them Home";
+
+        // Update hero section
+        document.querySelector(".hero p").innerHTML = t.heroText;
+        document.querySelector(".hero .btn-primary").textContent = t.donateBtn;
+        document.querySelector(".hero .btn-secondary").textContent =
+          t.readStoryBtn;
+
+        // Update section titles
+        document.querySelectorAll(".section-title")[0].textContent =
+          t.ourStoryTitle;
+        document.querySelectorAll(".section-title")[1].textContent =
+          t.legalTitle;
+        document.querySelectorAll(".section-title")[2].textContent =
+          t.timelineTitle;
+        document.querySelectorAll(".section-title")[3].textContent =
+          t.evidenceTitle;
+        document.querySelectorAll(".section-title")[4].textContent =
+          t.donateTitle;
+
+        // Update story section card titles and content
+        const storyCards = document.querySelectorAll(
+          "#story .evidence-card h3"
+        );
+        if (storyCards[0]) storyCards[0].textContent = t.builtFromNothing;
+        if (storyCards[1]) storyCards[1].textContent = t.wrongfulDecision;
+        if (storyCards[2]) storyCards[2].textContent = t.ourRealityNow;
+
+        // Update story card paragraphs
+        const storyP = document.querySelectorAll(
+          "#story .evidence-card .evidence-content p"
+        );
+        if (storyP[0]) storyP[0].textContent = t.storyP1;
+        if (storyP[1]) storyP[1].textContent = t.storyP2;
+        if (storyP[2]) storyP[2].innerHTML = t.storyP3;
+        if (storyP[3]) storyP[3].textContent = t.storyP4;
+        if (storyP[4]) storyP[4].textContent = t.wrongfulP1;
+        if (storyP[5]) storyP[5].innerHTML = t.wrongfulP2;
+        if (storyP[6]) storyP[6].innerHTML = t.wrongfulP3;
+        if (storyP[7]) storyP[7].textContent = t.wrongfulP4;
+        if (storyP[8])
+          storyP[8].innerHTML =
+            t.realityP1 +
+            ' <a href="https://insightcrime.org/news/insight-crime-2024-homicide-round-up/" target="_blank" style="color: var(--primary); text-decoration: underline">homicide rate of ~34 per 100,000 in 2023—nearly six times the global average</a>.Violence is part of daily life. Organized crime controls entire regions. People disappear. Local authorities are overwhelmed and underfunded, leaving families like ours defenseless and invisible.';
+        if (storyP[9]) storyP[9].innerHTML = t.realityP2;
+        if (storyP[10]) storyP[10].textContent = t.realityP3;
+        if (storyP[11]) storyP[11].textContent = t.realityP4;
+
+        // Update legal section
+        const legalSubtitle = document.querySelector(
+          '#legal h3[style*="color: var(--primary)"]'
+        );
+        if (legalSubtitle) legalSubtitle.textContent = t.legalSubtitle;
+
+        const helpFightBtn = document.querySelector("#legal .btn");
+        if (helpFightBtn) helpFightBtn.textContent = t.helpFightBtn;
+
+        // Update timeline section
+        const timelineCaption = document.querySelector(".timeline-caption");
+        if (timelineCaption) {
+          const smallTag = timelineCaption.querySelector("small");
+          if (smallTag)
+            smallTag.textContent =
+              'They told us to do it the "right way"—then dragged us through hell.';
+          timelineCaption.childNodes[1].textContent = t.timelineCaption;
+        }
+
+        // Update timeline promise/reality section
+        const promiseStrong = document.querySelector(
+          '#timeline strong[style*="color: var(--primary)"]'
+        );
+        if (promiseStrong) promiseStrong.textContent = t.timelinePromise;
+
+        const realityStrong = document.querySelector(
+          '#timeline strong[style*="color: var(--secondary)"]'
+        );
+        if (realityStrong) realityStrong.textContent = t.timelineReality;
+
+        const promiseText = document.querySelector(
+          '#timeline p[style*="font-style: italic"]'
+        );
+        if (promiseText) promiseText.textContent = t.timelinePromiseText;
+
+        const realityText = document.querySelector(
+          '#timeline p[style*="font-weight: 500"][style*="color: #333"]'
+        );
+        if (realityText) realityText.textContent = t.timelineRealityText;
+
+        const timelineBottom = document.querySelector(
+          '#timeline p[style*="font-weight: bold"][style*="color: var(--primary)"]'
+        );
+        if (timelineBottom) timelineBottom.textContent = t.timelineBottom;
+
+        // Update evidence section card titles
+        const evidenceCards = document.querySelectorAll(
+          "#evidence .evidence-card h3"
+        );
+        if (evidenceCards[0]) evidenceCards[0].textContent = t.actOfSurvival;
+        if (evidenceCards[1]) evidenceCards[1].textContent = t.mentalHealth;
+        if (evidenceCards[2]) evidenceCards[2].textContent = t.collapseFamily;
+
+        // Update evidence section content
+        const evidenceP = document.querySelectorAll(
+          "#evidence .evidence-card .evidence-content p"
+        );
+        if (evidenceP[0]) evidenceP[0].textContent = t.evidenceP1;
+        if (evidenceP[1]) evidenceP[1].innerHTML = t.evidenceP2;
+        if (evidenceP[2]) evidenceP[2].textContent = t.evidenceP3;
+        if (evidenceP[3]) evidenceP[3].textContent = t.evidenceP4;
+        if (evidenceP[4]) evidenceP[4].innerHTML = t.mentalHealthP1;
+        if (evidenceP[6]) evidenceP[6].textContent = t.mentalHealthP2;
+        if (evidenceP[7]) evidenceP[7].innerHTML = t.familyCollapseP1;
+        if (evidenceP[8]) evidenceP[8].textContent = t.familyCollapseP2;
+
+        // Update timeline events
+        const timelineEvents = document.querySelectorAll(".timeline-item p");
+        if (timelineEvents[0])
+          timelineEvents[0].textContent = t.timelineEvents.event1;
+        if (timelineEvents[1])
+          timelineEvents[1].textContent = t.timelineEvents.event2;
+        if (timelineEvents[2])
+          timelineEvents[2].textContent = t.timelineEvents.event3;
+        if (timelineEvents[3])
+          timelineEvents[3].textContent = t.timelineEvents.event4;
+        if (timelineEvents[4])
+          timelineEvents[4].textContent = t.timelineEvents.event5;
+        if (timelineEvents[5])
+          timelineEvents[5].textContent = t.timelineEvents.event6;
+        if (timelineEvents[6])
+          timelineEvents[6].textContent = t.timelineEvents.event7;
+
+        // Update legal case content
+        const legalCases = document.querySelectorAll(".case-content");
+        if (legalCases[0]) legalCases[0].textContent = t.legalCase1;
+        if (legalCases[1]) legalCases[1].textContent = t.legalCase2;
+        if (legalCases[2]) legalCases[2].textContent = t.legalCase3;
+
+        // Update legal analysis
+        const legalAnalysisText = document.querySelector(
+          '#legal small[style*="color: #666"]'
+        );
+        if (legalAnalysisText) legalAnalysisText.textContent = t.legalAnalysis;
+
+        // Update therapist PDF button
+        const therapistBtn = document.querySelector("#evidence .btn");
+        if (therapistBtn) therapistBtn.textContent = t.viewTherapist;
+
+        // Update donation section
+        document.querySelector("#donate h3").textContent = t.donateSubtitle;
+        document.querySelector(
+          '#donate p[style*="font-size: 1.1rem"]'
+        ).textContent = t.chooseWay;
+        document.querySelector('p[style*="font-size: 0.95rem"]').textContent =
+          t.scanText;
+        document.querySelector('p[style*="font-size: 0.85rem"]').textContent =
+          t.mobileText;
+        document.querySelector('p[style*="margin-top: 1rem"]').textContent =
+          t.shareText;
+
+        // Update donation buttons
+        const gofundmeBtn = document.querySelector('a[href*="gofundme"]');
+        if (gofundmeBtn && gofundmeBtn.textContent.includes("GoFundMe"))
+          gofundmeBtn.textContent = t.donateViaGoFundMe;
+
+        const paypalBtn = document.querySelector('a[href*="paypal.me"]');
+        if (paypalBtn && paypalBtn.textContent.includes("PayPal"))
+          paypalBtn.textContent = t.donateViaPayPal;
+
+        // Update social media buttons
+        const facebookBtn = document.querySelector(
+          'button[onclick*="facebook"]'
+        );
+        if (facebookBtn) facebookBtn.textContent = t.shareOnFacebook;
+
+        const twitterBtn = document.querySelector('button[onclick*="twitter"]');
+        if (twitterBtn) twitterBtn.textContent = t.shareOnX;
+
+        const instagramBtn = document.querySelector(
+          'button[onclick*="Instagram"]'
+        );
+        if (instagramBtn) instagramBtn.textContent = t.copyForInstagram;
+
+        // Update sticky bar
+        const stickyTextSpan = document.querySelector(".donation-text");
+        const countdownSpan = stickyTextSpan.querySelector("#mobile-countdown");
+        const countdownText = countdownSpan.textContent;
+        stickyTextSpan.innerHTML = `<span id="mobile-countdown">${countdownText}</span> ${t.stickyText}`;
+
+        // Update sticky donate button
+        const stickyDonateBtn = document.querySelector(".donation-bar .btn");
+        if (stickyDonateBtn) stickyDonateBtn.textContent = t.donateBtn;
+
+        // Store language preference
+        localStorage.setItem("preferred-language", lang);
+      }
+
+      // Load saved language preference or default to English
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedLang = localStorage.getItem("preferred-language") || "en";
+        switchLanguage(savedLang);
+      });
+    </script>
 
     <!-- Google Analytics (Replace with your tracking ID) -->
     <script

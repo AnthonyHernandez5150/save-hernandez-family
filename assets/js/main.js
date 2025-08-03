@@ -1,6 +1,6 @@
 // ===== COUNTDOWN TIMER =====
 function updateCountdown() {
-    const deadline = new Date("2025-08-15");
+    const deadline = new Date("2025-10-01");
     const now = new Date();
     const diff = deadline - now;
     
@@ -172,11 +172,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add years counter to timeline
     addYearsCounter();
     
+    // Initialize language system
+    const savedLang = localStorage.getItem('language') || 'en';
+    updateLanguageIndicator(savedLang);
+    
     // Add loading animation completion
     document.body.classList.add('loaded');
     
     // Log initialization for debugging
     console.log('Save Hernandez Family website initialized successfully');
+    console.log('Language system initialized with:', savedLang);
 });
 
 // ===== UTILITY FUNCTIONS =====
@@ -207,4 +212,38 @@ function trackDonationClick(source) {
             'event_label': source
         });
     }
+}
+
+// ===== LANGUAGE SWITCHING SYSTEM =====
+function switchLanguage(lang) {
+    localStorage.setItem('language', lang);
+    updateLanguageIndicator(lang);
+    
+    // Here you would typically update all text content
+    // For now, we'll just update the indicator and log the change
+    console.log(`Language switched to: ${lang.toUpperCase()}`);
+    
+    // Update the sticky bar language indicator
+    updateLanguageIndicator(lang);
+    
+    // In a full implementation, you would update all translatable content here
+    // Example: updatePageContent(lang);
+}
+
+function updateLanguageIndicator(lang) {
+    const indicator = document.getElementById("current-lang");
+    if (indicator) {
+        indicator.textContent = lang.toUpperCase();
+        console.log('Language indicator updated to:', lang.toUpperCase());
+    } else {
+        console.error('Language indicator element not found!');
+    }
+}
+
+// ===== ENHANCED LANGUAGE TOGGLE =====
+function toggleLanguage() {
+    const currentLang = localStorage.getItem("language") || "en";
+    const newLang = currentLang === "en" ? "es" : "en";
+    console.log('Toggling from', currentLang, 'to', newLang);
+    switchLanguage(newLang);
 }

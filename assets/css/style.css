@@ -300,15 +300,58 @@ section:nth-child(even) {
     right: 0;
     background-color: var(--secondary);
     color: white;
-    padding: 15px;
+    padding: 12px 15px;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+}
+
+.donation-left {
+    flex-shrink: 0;
+}
+
+.donation-center {
+    flex: 1;
+    text-align: center;
 }
 
 .donation-text {
     font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Mobile donation bar adjustments */
+@media (max-width: 768px) {
+    .donation-bar {
+        padding: 10px 12px;
+        gap: 0.75rem;
+    }
+    
+    .donation-text {
+        font-size: 0.85rem;
+    }
+    
+    .language-switcher {
+        font-size: 0.75rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .donation-bar {
+        padding: 8px 10px;
+        gap: 0.5rem;
+    }
+    
+    .donation-text {
+        font-size: 0.8rem;
+    }
+    
+    .language-switcher {
+        font-size: 0.7rem !important;
+        padding: 3px 6px !important;
+    }
 }
 
 /* ===== RESPONSIVE ===== */
