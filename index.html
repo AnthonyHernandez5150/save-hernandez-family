@@ -199,12 +199,13 @@
               <h3>The Wrongful Decision</h3>
               <p>
                 Ilsia followed every step of the legal immigration process — and
-                was still denied. Not for what she did, but for surviving.
+                was still denied. Not because of wrongdoing, but because of how
+                the system failed to understand her story.
               </p>
               <p style="margin-top: 1rem">
-                She had an <strong>approved I-601A waiver</strong> — officially
-                recognized by USCIS. She provided hospital records and court
-                documents proving she was a victim of domestic violence.
+                She had an <strong>approved I-601A waiver</strong> — fully
+                recognized by USCIS, and submitted extensive documentation as
+                required by law.
               </p>
               <p
                 style="
@@ -213,13 +214,16 @@
                   color: var(--primary);
                 "
               >
-                But the Embassy called survival "fraud." They dismissed the
-                facts. They ignored the law. They punished a woman for fleeing
-                her abuser at 18 years old.
+                But at the final step, the Embassy dismissed her case,
+                mislabeling critical details as "fraud" — not because of
+                evidence, but because of rigid, outdated policies that ignore
+                real human circumstances.
               </p>
               <p style="margin-top: 1rem; font-weight: bold">
-                This isn't an immigration case — it's a miscarriage of justice.
-                They're destroying an American family because they can.
+                This is not an immigration issue — it's a bureaucratic failure
+                tearing apart an American family. A family that did everything
+                right, only to be punished by a broken system that refuses to
+                see people as more than paperwork.
               </p>
             </div>
           </div>
@@ -1614,7 +1618,7 @@ Help us fight back: https://gofund.me/5-dollars-to-stop-foreclosure
       // Simple content update function
       function updatePageContent(lang) {
         const t = translations[lang];
-        
+
         if (!t) {
           return;
         }
@@ -1631,7 +1635,7 @@ Help us fight back: https://gofund.me/5-dollars-to-stop-foreclosure
           // Update buttons
           const donateBtn = document.querySelector(".btn-primary");
           if (donateBtn) donateBtn.textContent = t.donateBtn;
-          
+
           const readStoryBtn = document.querySelector(".btn-secondary");
           if (readStoryBtn) readStoryBtn.textContent = t.readStoryBtn;
 
@@ -1639,7 +1643,9 @@ Help us fight back: https://gofund.me/5-dollars-to-stop-foreclosure
           const stickyText = document.querySelector(".donation-text");
           if (stickyText) {
             const countdownSpan = stickyText.querySelector("#mobile-countdown");
-            const countdownText = countdownSpan ? countdownSpan.outerHTML + " " : "";
+            const countdownText = countdownSpan
+              ? countdownSpan.outerHTML + " "
+              : "";
             stickyText.innerHTML = countdownText + t.stickyText;
           }
 
@@ -1706,12 +1712,18 @@ Help us fight back: https://gofund.me/5-dollars-to-stop-foreclosure
           }
 
           // Update timeline promise/reality box - be more specific
-          const timelineBox = document.querySelector("#timeline div[style*='background: rgba(230, 57, 70, 0.05)']");
+          const timelineBox = document.querySelector(
+            "#timeline div[style*='background: rgba(230, 57, 70, 0.05)']"
+          );
           if (timelineBox) {
-            const promiseDiv = timelineBox.querySelector("div:first-child div:first-child");
-            const realityDiv = timelineBox.querySelector("div:first-child div:last-child");
+            const promiseDiv = timelineBox.querySelector(
+              "div:first-child div:first-child"
+            );
+            const realityDiv = timelineBox.querySelector(
+              "div:first-child div:last-child"
+            );
             const bottomP = timelineBox.querySelector("div:last-child p");
-            
+
             if (promiseDiv) {
               promiseDiv.innerHTML = `<strong style="color: var(--primary); font-size: 1.2rem; display: block; margin-bottom: 0.75rem;">${t.timelinePromise}</strong><p style="margin: 0; font-style: italic; color: #555; font-size: 1.05rem; line-height: 1.4;">${t.timelinePromiseText}</p>`;
             }
@@ -1726,17 +1738,26 @@ Help us fight back: https://gofund.me/5-dollars-to-stop-foreclosure
           // Update timeline events
           const timelineEvents = document.querySelectorAll(".timeline-item p");
           if (t.timelineEvents) {
-            if (timelineEvents[0]) timelineEvents[0].textContent = t.timelineEvents.event1;
-            if (timelineEvents[1]) timelineEvents[1].textContent = t.timelineEvents.event2;
-            if (timelineEvents[2]) timelineEvents[2].textContent = t.timelineEvents.event3;
-            if (timelineEvents[3]) timelineEvents[3].textContent = t.timelineEvents.event4;
-            if (timelineEvents[4]) timelineEvents[4].textContent = t.timelineEvents.event5;
-            if (timelineEvents[5]) timelineEvents[5].textContent = t.timelineEvents.event6;
-            if (timelineEvents[6]) timelineEvents[6].textContent = t.timelineEvents.event7;
+            if (timelineEvents[0])
+              timelineEvents[0].textContent = t.timelineEvents.event1;
+            if (timelineEvents[1])
+              timelineEvents[1].textContent = t.timelineEvents.event2;
+            if (timelineEvents[2])
+              timelineEvents[2].textContent = t.timelineEvents.event3;
+            if (timelineEvents[3])
+              timelineEvents[3].textContent = t.timelineEvents.event4;
+            if (timelineEvents[4])
+              timelineEvents[4].textContent = t.timelineEvents.event5;
+            if (timelineEvents[5])
+              timelineEvents[5].textContent = t.timelineEvents.event6;
+            if (timelineEvents[6])
+              timelineEvents[6].textContent = t.timelineEvents.event7;
           }
 
           // Update evidence section - be more specific
-          const evidenceCards = document.querySelectorAll("#evidence .evidence-card");
+          const evidenceCards = document.querySelectorAll(
+            "#evidence .evidence-card"
+          );
           if (evidenceCards[0]) {
             const title = evidenceCards[0].querySelector("h3");
             if (title) title.textContent = t.actOfSurvival;
@@ -1768,30 +1789,42 @@ Help us fight back: https://gofund.me/5-dollars-to-stop-foreclosure
           if (donateSubtitle) donateSubtitle.textContent = t.donateSubtitle;
 
           // Update specific donation text elements
-          const chooseWayP = document.querySelector("#donate p[style*='margin-bottom: 1.5rem']");
+          const chooseWayP = document.querySelector(
+            "#donate p[style*='margin-bottom: 1.5rem']"
+          );
           if (chooseWayP) chooseWayP.textContent = t.chooseWay;
 
-          const scanTextP = document.querySelector("#donate p[style*='margin-bottom: 0.75rem']");
+          const scanTextP = document.querySelector(
+            "#donate p[style*='margin-bottom: 0.75rem']"
+          );
           if (scanTextP) scanTextP.textContent = t.scanText;
 
-          const mobileTextP = document.querySelector("#donate p[style*='margin-top: 0.5rem']");
+          const mobileTextP = document.querySelector(
+            "#donate p[style*='margin-top: 0.5rem']"
+          );
           if (mobileTextP) mobileTextP.textContent = t.mobileText;
 
-          const shareTextP = document.querySelector("#donate p[style*='margin-top: 1rem']");
+          const shareTextP = document.querySelector(
+            "#donate p[style*='margin-top: 1rem']"
+          );
           if (shareTextP) shareTextP.textContent = t.shareText;
 
           // Update donation buttons
           const donateButtons = document.querySelectorAll("#donate .btn");
-          if (donateButtons[0]) donateButtons[0].textContent = t.donateViaGoFundMe;
-          if (donateButtons[1]) donateButtons[1].textContent = t.donateViaPayPal;
+          if (donateButtons[0])
+            donateButtons[0].textContent = t.donateViaGoFundMe;
+          if (donateButtons[1])
+            donateButtons[1].textContent = t.donateViaPayPal;
 
           // Update social buttons
           const socialButtons = document.querySelectorAll("#donate button");
-          if (socialButtons[0]) socialButtons[0].textContent = t.shareOnFacebook;
+          if (socialButtons[0])
+            socialButtons[0].textContent = t.shareOnFacebook;
           if (socialButtons[1]) socialButtons[1].textContent = t.shareOnX;
-          if (socialButtons[2]) socialButtons[2].textContent = t.copyForInstagram;
+          if (socialButtons[2])
+            socialButtons[2].textContent = t.copyForInstagram;
 
-          console.log('Content updated successfully to', lang);
+          console.log("Content updated successfully to", lang);
         } catch (error) {
           // Silent error handling for production
         }
@@ -2017,13 +2050,18 @@ Help us fight back: https://gofund.me/5-dollars-to-stop-foreclosure
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZX2CTKMZF"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SZX2CTKMZF"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-SZX2CTKMZF');
+      gtag("config", "G-SZX2CTKMZF");
     </script>
   </body>
 </html>
