@@ -1004,85 +1004,85 @@
             Every $5 gives us another hour to fight
           </h3>
 
-          <!-- Campaign Progress Bar -->
+          <!-- ===== UNIFIED PROGRESS TRACKER ===== -->
           <div
-            class="campaign-progress"
+            class="unified-progress"
             style="
               background: rgba(255, 255, 255, 0.1);
+              border: 2px solid var(--primary);
               padding: 2rem;
               border-radius: 12px;
               margin-bottom: 3rem;
               backdrop-filter: blur(10px);
+              box-shadow: 0 4px 20px rgba(230, 57, 70, 0.2);
             "
           >
+            <!-- Emergency Header -->
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+              <h3 style="color: var(--highlight); font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0;">
+                EMERGENCY: <span id="main-deadline">$5,000 needed by Aug 15</span>
+              </h3>
+            </div>
+
+            <!-- Progress Stats -->
             <div
-              class="progress-stats"
               style="
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
                 flex-wrap: wrap;
                 gap: 1rem;
               "
             >
               <div style="display: flex; align-items: baseline; gap: 0.5rem">
                 <span
-                  class="raised"
+                  id="main-raised"
                   style="
                     font-size: 2.5rem;
                     font-weight: bold;
                     color: var(--highlight);
+                    font-family: 'Playfair Display', serif;
                   "
-                  >$0</span
+                  >$150</span
                 >
-                <span class="divider" style="color: rgba(255, 255, 255, 0.8)">
-                  of
+                <span style="color: rgba(255, 255, 255, 0.8); font-size: 1.2rem;">
+                  of $20,000 goal
                 </span>
-                <span
-                  class="goal"
-                  style="font-size: 1.5rem; color: rgba(255, 255, 255, 0.9)"
-                  >$20,000</span
-                >
               </div>
               <div style="text-align: right">
                 <div
-                  class="percent"
+                  id="main-percent"
                   style="font-size: 1.2rem; font-weight: bold; color: white"
                 >
-                  0% funded
+                  0.75% funded
                 </div>
                 <div
-                  class="donors"
                   style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.8)"
                 >
-                  0 donations
+                  Every dollar counts
                 </div>
               </div>
             </div>
 
+            <!-- Main Progress Bar -->
             <div
-              class="progress-bar"
               style="
                 background: rgba(255, 255, 255, 0.2);
-                height: 12px;
-                border-radius: 6px;
+                height: 20px;
+                border-radius: 10px;
                 overflow: hidden;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
                 box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
               "
             >
               <div
-                class="progress-fill"
+                id="main-progress-fill"
                 style="
-                  width: 0%;
+                  width: 0.75%;
                   height: 100%;
-                  background: linear-gradient(
-                    90deg,
-                    var(--highlight) 0%,
-                    #4ecdc4 100%
-                  );
-                  border-radius: 6px;
+                  background: linear-gradient(90deg, var(--highlight) 0%, var(--primary) 100%);
+                  border-radius: 10px;
                   transition: width 0.5s ease;
                   position: relative;
                   overflow: hidden;
@@ -1095,29 +1095,44 @@
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    background: linear-gradient(
-                      90deg,
-                      transparent,
-                      rgba(255, 255, 255, 0.3),
-                      transparent
-                    );
+                    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
                     animation: shimmer 2s infinite;
                   "
                 ></div>
               </div>
             </div>
 
+            <!-- Donation Source Breakdown -->
             <div
-              class="progress-meta"
+              id="main-breakdown"
               style="
                 display: flex;
-                justify-content: space-between;
-                font-size: 0.85rem;
-                color: rgba(255, 255, 255, 0.7);
+                justify-content: center;
+                gap: 2rem;
+                margin-bottom: 1.5rem;
+                font-size: 1rem;
+                flex-wrap: wrap;
               "
             >
-              <span class="updated">Campaign just started</span>
-              <span>Goal: Help the Hernandez family</span>
+              <div style="background: rgba(255, 255, 255, 0.1); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                <span style="font-weight: 600; color: var(--highlight); margin-right: 0.5rem;">PayPal:</span>
+                <span id="main-paypal-amount">$150</span>
+              </div>
+              <div style="background: rgba(255, 255, 255, 0.1); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                <span style="font-weight: 600; color: var(--highlight); margin-right: 0.5rem;">Cash App:</span>
+                <span id="main-cashapp-amount">$0</span>
+              </div>
+              <div style="background: rgba(255, 255, 255, 0.1); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                <span style="font-weight: 600; color: var(--highlight); margin-right: 0.5rem;">GoFundMe:</span>
+                <span id="main-gofundme-amount">$0</span>
+              </div>
+            </div>
+
+            <!-- Update Note -->
+            <div style="text-align: center;">
+              <p style="margin: 0; font-size: 0.85rem; opacity: 0.7; font-style: italic;">
+                Totals updated manually throughout the day
+              </p>
             </div>
           </div>
 
@@ -1127,19 +1142,24 @@
               grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
               gap: 2rem;
               margin-bottom: 3rem;
+              text-align: center;
             "
           >
-            <div>
+            <div style="text-align: center;">
               <h4 style="font-size: 2rem; color: var(--highlight)">$5</h4>
-              <p>Buys printing for flyers</p>
+              <p style="margin: 0;">saves our family for one day — or buys you a Red Bull. <em>Your call.</em></p>
             </div>
-            <div>
+            <div style="text-align: center;">
+              <h4 style="font-size: 2rem; color: var(--highlight)">$25</h4>
+              <p style="margin: 0;">turns one takeout order into document fees a judge won't ignore.</p>
+            </div>
+            <div style="text-align: center;">
               <h4 style="font-size: 2rem; color: var(--highlight)">$50</h4>
-              <p>Covers legal filing fees</p>
+              <p style="margin: 0;">keeps the legal fight moving instead of one blurry bar tab.</p>
             </div>
-            <div>
-              <h4 style="font-size: 2rem; color: var(--highlight)">$500</h4>
-              <p>Stops foreclosure for 1 week</p>
+            <div style="text-align: center;">
+              <h4 style="font-size: 2rem; color: var(--highlight)">$100</h4>
+              <p style="margin: 0;">buys a week of safety instead of one forgettable night out.</p>
             </div>
           </div>
 
@@ -1224,6 +1244,16 @@
             </div>
           </div>
 
+          <!-- ======= CASH APP SECTION ======= -->
+          <div class="donation-option cashapp">
+            <h3>Donate Instantly via Cash App</h3>
+            <div class="qr-container">
+              <img src="assets/images/cashapp-qr.png.png" alt="Cash App QR Code - Scan to donate $mrtigger6x">
+              <div class="cashapp-id">$mrtigger6x</div>
+            </div>
+            <p class="note">100% goes directly to saving an American family </p>
+          </div>
+
           <p style="margin-top: 1rem">or share this page with 3 friends</p>
 
           <!-- Social Sharing Buttons -->
@@ -1249,6 +1279,76 @@
             >
               Copy for Instagram
             </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Donation Conversion Section ===== -->
+    <section class="donate-section" aria-labelledby="donate-title">
+      <div class="donate-wrap">
+        <!-- Left: human story -->
+        <figure class="donate-figure">
+          <img src="assets/images/hernandez-family-unity-before-visa-denial.jpg" alt="Our family together, fighting to keep our home" loading="lazy">
+          <figcaption>We did everything by the book. We're still here fighting.</figcaption>
+        </figure>
+
+        <!-- Right: copy + CTA -->
+        <div class="donate-copy">
+          <h2 id="donate-title">Skip one thing you won't remember. Save the thing we can't live without.</h2>
+          <p class="donate-lede">
+            If you've ever thought, "Someone should do something," this is that moment.
+            <span class="moral-nudge">What's the right thing to do—right now?</span>
+          </p>
+
+          <!-- Social proof (update the numbers manually or from your script) -->
+          <div class="social-proof" aria-live="polite">
+            <div class="avatars" aria-hidden="true">
+              <span class="avatar">A</span><span class="avatar">J</span><span class="avatar">M</span><span class="avatar">S</span>
+            </div>
+            <p><strong><span id="donor-count">184</span> people</strong> have already stepped up. Join them.</p>
+          </div>
+
+          <!-- Punchy impact lines -->
+          <ul class="impact-list" role="list">
+            <li><strong>$5</strong> — saves our family for one day — or buys you a Red Bull. <em>Your call.</em></li>
+            <li><strong>$25</strong> — turns one takeout order into document fees a judge won't ignore.</li>
+            <li><strong>$50</strong> — keeps the legal fight moving instead of one blurry bar tab.</li>
+            <li><strong>$100</strong> — buys a week of safety instead of one forgettable night out.</li>
+          </ul>
+
+          <!-- CTA row -->
+          <div class="cta-row" style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+            <!-- Platform Buttons -->
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; width: 100%;">
+              <a class="btn-primary" href="https://www.gofundme.com/f/5-dollars-to-stop-foreclosure" target="_blank" rel="noopener" onclick="trackDonationClick('conversion-gofundme')" style="background: #e63946; padding: 12px 24px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; min-width: 150px; text-align: center;">
+                Donate via GoFundMe
+              </a>
+              <a class="btn-primary" href="https://paypal.me/anthonyhernandez732" target="_blank" rel="noopener" onclick="trackDonationClick('conversion-paypal')" style="background: #0070ba; padding: 12px 24px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; min-width: 150px; text-align: center;">
+                Donate via PayPal
+              </a>
+              <a class="btn-primary" href="https://cash.app/$mrtigger6x" target="_blank" rel="noopener" onclick="trackDonationClick('conversion-cashapp')" style="background: #00D632; padding: 12px 24px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; min-width: 150px; text-align: center;">
+                Donate via Cash App
+              </a>
+            </div>
+            
+            <!-- QR Codes Section -->
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem;">
+              <div class="qr" style="text-align: center;">
+                <img src="assets/images/paypal-donation-qr-code-hernandez-family.png" alt="PayPal QR - Scan to donate" loading="lazy" style="width: 100px; height: 100px; border-radius: 8px;">
+                <small style="display: block; margin-top: 0.5rem; color: #666;">PayPal QR</small>
+              </div>
+              <div class="qr" style="text-align: center;">
+                <img src="assets/images/cashapp-qr.png.png" alt="Cash App QR - Scan to donate $mrtigger6x" loading="lazy" style="width: 100px; height: 100px; border-radius: 8px;">
+                <small style="display: block; margin-top: 0.5rem; color: #666;">Cash App QR</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gratitude / reciprocity (appears after button click) -->
+          <div class="thanks hidden" id="thanks">
+            <p><strong>Thank you.</strong> We'll send updates so you see exactly what your donation changed.</p>
+            <button class="btn-ghost" id="share-btn" type="button">Share this so one more person wakes up</button>
           </div>
         </div>
       </div>
@@ -1312,13 +1412,20 @@
           class="btn"
           style="background-color: #0070ba; color: #fff; font-size: 1rem; padding: 8px 18px; min-width: 140px; text-align: center;"
         >Donate via PayPal</a>
+        <a
+          href="https://cash.app/$mrtigger6x"
+          onclick="trackDonationClick('sticky-cashapp')"
+          class="btn"
+          style="background-color: #00D632; color: #fff; font-size: 1rem; padding: 8px 18px; min-width: 140px; text-align: center;"
+        >Donate via Cash App</a>
       </div>
     </div>
 
     <!-- EXTERNAL JAVASCRIPT -->
     <script src="assets/js/main.js"></script>
 
-    <!-- Instagram Copy Function -->
+  <script src="assets/js/donation-tracker.js"></script>
+  <!-- Instagram Copy Function -->
     <script>
       function shareOnInstagram() {
         const instagramCaption = `💔 This is what a broken immigration system looks like.

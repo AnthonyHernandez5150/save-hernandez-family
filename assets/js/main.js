@@ -247,3 +247,47 @@ function toggleLanguage() {
     console.log('Toggling from', currentLang, 'to', newLang);
     switchLanguage(newLang);
 }
+
+// ===== DONATION CONVERSION SECTION FUNCTIONALITY =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Gratitude reveal on click
+    const donateBtn = document.getElementById('donate-btn');
+    if (donateBtn) {
+        donateBtn.addEventListener('click', () => {
+            const thanksEl = document.getElementById('thanks');
+            if (thanksEl) {
+                thanksEl.classList.remove('hidden');
+            }
+        });
+    }
+
+    // Native share (fallback to copy)
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', async () => {
+            const url = location.href;
+            const text = "Skip one thing you won't remember—help this family keep their home.";
+            try {
+                if (navigator.share) {
+                    await navigator.share({
+                        title: document.title,
+                        text: text,
+                        url: url
+                    });
+                } else {
+                    await navigator.clipboard.writeText(url);
+                    alert("Link copied. Text a friend who can spare a Red Bull.");
+                }
+            } catch (error) {
+                // User canceled or error occurred
+                console.log('Share canceled or failed:', error);
+            }
+        });
+    }
+
+    // Optional: set donor count dynamically from data-* if you pipe it in later
+    const donorCount = document.getElementById('donor-count');
+    if (donorCount && donorCount.dataset.value) {
+        donorCount.textContent = donorCount.dataset.value;
+    }
+});
